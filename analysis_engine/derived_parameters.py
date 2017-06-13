@@ -4941,7 +4941,7 @@ class CoordinatesSmoothed(object):
 
             if approach.type == 'LANDING':
                 runway = approach.landing_runway
-            elif approach.type == 'GO AROUND':
+            elif approach.type == 'GO_AROUND':
                 runway = approach.approach_runway
             else:
                 raise 'unfamiliar approach type'
