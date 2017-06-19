@@ -1998,10 +1998,8 @@ class GearUpSelected(MultistateDerivedParameterNode):
 
     @classmethod
     def can_operate(cls, available):
-        if 'Gear Up In Transit' in available:
-            return any_of(('Gear Up', 'Gear Position'), available)
-        else:
-            return 'Gear Down Selected' in available
+        up_trans = ('Gear Up In Transit' in available) and any_of(('Gear Up', 'Gear Position'), available)
+        return up_trans or ('Gear Down Selected' in available)
 
     def derive(self,
                gear_up=M('Gear Up'),
